@@ -8,7 +8,7 @@ body{
   margin:0;
   height:100vh;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#ff9a9e,#fecfef,#fecfef);
+  background:linear-gradient(135deg,#ff9a9e,#fecfef);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -18,18 +18,16 @@ body{
 }
 
 .card{
-  background:rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.15);
   padding:30px;
   border-radius:25px;
   backdrop-filter:blur(10px);
   box-shadow:0 0 30px rgba(0,0,0,0.2);
   width:90%;
-  max-width:500px;
+  max-width:520px;
 }
 
 .section{display:none;}
-
-h1,h2{margin-bottom:20px;}
 
 button{
   padding:12px 25px;
@@ -81,11 +79,15 @@ img.option:hover{transform:scale(1.1);}
 <div id="flowers" class="section">
 <h2>Pick your flowers 🌸</h2>
 
-<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Rose_Red.jpg" onclick="nextSection('food')" title="Roses 🌹">
-<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Lilium_bulbiferum_Orange_Lily.jpg" onclick="nextSection('food')" title="Lilies 🌼">
-<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Orchidaceae_-_Phalaenopsis_amabilis.JPG" onclick="nextSection('food')" title="Orchids 🌺">
-<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Gerbera_jamesonii.jpg" onclick="nextSection('food')" title="Gerberas 🌸">
-<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Carnation_red.jpg" onclick="nextSection('food')" title="Carnations 💐">
+<img class="option" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Roses 🌹">
+
+<img class="option" src="https://images.unsplash.com/photo-1589135271304-4c4e6b7a3e6d?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Lilies 🌼">
+
+<img class="option" src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Orchids 🌺">
+
+<img class="option" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Gerberas 🌸">
+
+<img class="option" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Carnations 💐">
 
 </div>
 
@@ -124,6 +126,7 @@ img.option:hover{transform:scale(1.1);}
 const noBtn=document.getElementById("noBtn");
 const yesBtn=document.getElementById("yesBtn");
 
+// NO button runs but never disappears
 function moveNo(){
   const x=Math.random()*(window.innerWidth-noBtn.offsetWidth);
   const y=Math.random()*(window.innerHeight-noBtn.offsetHeight);
@@ -141,19 +144,8 @@ document.addEventListener("mousemove",(e)=>{
 yesBtn.onclick=()=>{
   document.getElementById("mainQ").style.display="none";
   yesBtn.style.display="none";
-  noBtn.style.display="none";
   document.getElementById("flowers").style.display="block";
 };
 
 function nextSection(id){
-  document.querySelectorAll(".section").forEach(s=>s.style.display="none");
-  document.getElementById(id).style.display="block";
-}
-
-function showFinal(){
-  nextSection("final");
-}
-</script>
-
-</body>
-</html>
+  docum
