@@ -15,8 +15,8 @@ body{
 }
 .section{display:none;margin-top:40px;}
 button{
-  padding:12px 25px;
-  margin:10px;
+  padding:12px 20px;
+  margin:8px;
   border:none;
   border-radius:30px;
   font-size:1em;
@@ -24,7 +24,7 @@ button{
 }
 #yesBtn{background:#ff2e63;color:white;}
 #noBtn{background:white;color:#ff2e63;position:absolute;}
-img.option{width:120px;border-radius:15px;margin:10px;cursor:pointer;}
+img.option{width:130px;border-radius:15px;margin:10px;cursor:pointer;}
 #finalPic{width:260px;margin-top:20px;border-radius:20px;box-shadow:0 0 20px white;}
 </style>
 </head>
@@ -36,23 +36,31 @@ img.option{width:120px;border-radius:15px;margin:10px;cursor:pointer;}
 
 <!-- FLOWERS -->
 <div id="flowers" class="section">
-<h2>Pick your flowers 🌸</h2>
-<img class="option" src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d" onclick="nextSection('food')">
-<img class="option" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" onclick="nextSection('food')">
-<img class="option" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" onclick="nextSection('food')">
+<h2>Pick your favorite flowers 🌸</h2>
+<img class="option" src="https://images.unsplash.com/photo-1519681393784-d120267933ba" onclick="nextSection('food')" title="Roses">
+<img class="option" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" onclick="nextSection('food')" title="Lilies">
+<img class="option" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" onclick="nextSection('food')" title="Orchids">
+<img class="option" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" onclick="nextSection('food')" title="Sunflowers">
 </div>
 
 <!-- FOOD -->
 <div id="food" class="section">
-<h2>What are we eating? 😋</h2>
-<button onclick="nextSection('date')">Pizza 🍕</button>
-<button onclick="nextSection('date')">Pasta 🍝</button>
-<button onclick="nextSection('date')">Dessert Date 🍰</button>
+<h2>What cuisine are we craving? 😋</h2>
+<button onclick="nextSection('date')">Italian 🍝</button>
+<button onclick="nextSection('date')">North Indian 🍛</button>
+<button onclick="nextSection('date')">South Indian 🥞</button>
+<button onclick="nextSection('date')">Chinese 🥡</button>
+<button onclick="nextSection('date')">Japanese 🍣</button>
+<button onclick="nextSection('date')">Mexican 🌮</button>
+<button onclick="nextSection('date')">Thai 🍜</button>
+<button onclick="nextSection('date')">Continental 🥩</button>
+<button onclick="nextSection('date')">Cafe/Desserts 🍰</button>
+<button onclick="nextSection('date')">Street Food 🌯</button>
 </div>
 
 <!-- DATE PICKER -->
 <div id="date" class="section">
-<h2>Pick Our Cute Recovery Date ✨ (After your eye surgery)</h2>
+<h2>Pick Our Cute Recovery Date ✨</h2>
 <input type="date" id="datePick">
 <br><br>
 <button onclick="showFinal()">Perfect 💖</button>
