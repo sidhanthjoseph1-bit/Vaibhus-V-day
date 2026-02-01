@@ -2,18 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Our Date 💖</title>
+<title>Our Special Date 💖</title>
 <style>
 body{
   margin:0;
   height:100vh;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
-  font-family:Segoe UI,sans-serif;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff9a9e,#fecfef,#fecfef);
+  display:flex;
+  justify-content:center;
+  align-items:center;
   text-align:center;
   overflow:hidden;
   color:white;
 }
-.section{display:none;margin-top:40px;}
+
+.card{
+  background:rgba(255,255,255,0.1);
+  padding:30px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 30px rgba(0,0,0,0.2);
+  width:90%;
+  max-width:500px;
+}
+
+.section{display:none;}
+
+h1,h2{margin-bottom:20px;}
+
 button{
   padding:12px 25px;
   margin:8px;
@@ -21,14 +38,40 @@ button{
   border-radius:30px;
   font-size:1em;
   cursor:pointer;
+  background:#ff4d6d;
+  color:white;
+  transition:0.2s;
 }
-#yesBtn{background:#ff2e63;color:white;}
-#noBtn{background:white;color:#ff2e63;position:absolute;}
-img.option{width:120px;border-radius:15px;margin:10px;cursor:pointer;}
-#finalPic{width:260px;margin-top:20px;border-radius:20px;box-shadow:0 0 20px white;}
+button:hover{transform:scale(1.05);}
+
+#noBtn{
+  background:white;
+  color:#ff4d6d;
+  position:absolute;
+}
+
+img.option{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:15px;
+  margin:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+img.option:hover{transform:scale(1.1);}
+
+#finalPic{
+  width:200px;
+  margin-top:15px;
+  border-radius:20px;
+  box-shadow:0 0 20px white;
+}
 </style>
 </head>
 <body>
+
+<div class="card">
 
 <h1 id="mainQ">Will you be my Valentine, Vaibhu? 💖</h1>
 <button id="yesBtn">Yes 😍</button>
@@ -37,12 +80,13 @@ img.option{width:120px;border-radius:15px;margin:10px;cursor:pointer;}
 <!-- FLOWERS -->
 <div id="flowers" class="section">
 <h2>Pick your flowers 🌸</h2>
-<p>(Available in Bangalore)</p>
-<img class="option" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176" onclick="nextSection('food')" title="Roses 🌹">
-<img class="option" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9" onclick="nextSection('food')" title="Lilies 🌼">
-<img class="option" src="https://images.unsplash.com/photo-1490707967831-1fd9b48c66ba" onclick="nextSection('food')" title="Orchids 🌺">
-<img class="option" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" onclick="nextSection('food')" title="Gerberas 🌸">
-<img class="option" src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d" onclick="nextSection('food')" title="Carnations 💐">
+
+<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Rose_Red.jpg" onclick="nextSection('food')" title="Roses 🌹">
+<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Lilium_bulbiferum_Orange_Lily.jpg" onclick="nextSection('food')" title="Lilies 🌼">
+<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Orchidaceae_-_Phalaenopsis_amabilis.JPG" onclick="nextSection('food')" title="Orchids 🌺">
+<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Gerbera_jamesonii.jpg" onclick="nextSection('food')" title="Gerberas 🌸">
+<img class="option" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Carnation_red.jpg" onclick="nextSection('food')" title="Carnations 💐">
+
 </div>
 
 <!-- FOOD -->
@@ -56,14 +100,13 @@ img.option{width:120px;border-radius:15px;margin:10px;cursor:pointer;}
 <button onclick="nextSection('date')">Chinese 🥡</button>
 <button onclick="nextSection('date')">Continental 🍽️</button>
 <button onclick="nextSection('date')">Cafe Date ☕</button>
-<button onclick="nextSection('date')">Street Food 🌮</button>
 <button onclick="nextSection('date')">Dessert Date 🍰</button>
 </div>
 
-<!-- DATE PICKER -->
+<!-- DATE -->
 <div id="date" class="section">
 <h2>Eye Surgery Bubu Recovery Date ✨💖</h2>
-<input type="date" id="datePick">
+<input type="date">
 <br><br>
 <button onclick="showFinal()">Perfect 💘</button>
 </div>
@@ -73,6 +116,8 @@ img.option{width:120px;border-radius:15px;margin:10px;cursor:pointer;}
 <h1>IT'S A DATE!!! 🎉💘</h1>
 <p>I can't wait 🥰</p>
 <img id="finalPic" src="husky.jpg">
+</div>
+
 </div>
 
 <script>
