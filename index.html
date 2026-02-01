@@ -25,6 +25,7 @@ body{
   box-shadow:0 0 30px rgba(0,0,0,0.2);
   width:90%;
   max-width:520px;
+  position:relative;
 }
 
 .section{display:none;}
@@ -38,9 +39,7 @@ button{
   cursor:pointer;
   background:#ff4d6d;
   color:white;
-  transition:0.2s;
 }
-button:hover{transform:scale(1.05);}
 
 #noBtn{
   background:white;
@@ -55,9 +54,7 @@ img.option{
   border-radius:15px;
   margin:8px;
   cursor:pointer;
-  transition:0.2s;
 }
-img.option:hover{transform:scale(1.1);}
 
 #finalPic{
   width:200px;
@@ -73,79 +70,4 @@ img.option:hover{transform:scale(1.1);}
 
 <h1 id="mainQ">Will you be my Valentine, Vaibhu? 💖</h1>
 <button id="yesBtn">Yes 😍</button>
-<button id="noBtn">No 🙈</button>
-
-<!-- FLOWERS -->
-<div id="flowers" class="section">
-<h2>Pick your flowers 🌸</h2>
-
-<img class="option" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Roses 🌹">
-
-<img class="option" src="https://images.unsplash.com/photo-1589135271304-4c4e6b7a3e6d?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Lilies 🌼">
-
-<img class="option" src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Orchids 🌺">
-
-<img class="option" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Gerberas 🌸">
-
-<img class="option" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=300&q=80" onclick="nextSection('food')" title="Carnations 💐">
-
-</div>
-
-<!-- FOOD -->
-<div id="food" class="section">
-<h2>What are we eating? 😋</h2>
-<button onclick="nextSection('date')">Asian 🍜</button>
-<button onclick="nextSection('date')">Burma Burma 🥢</button>
-<button onclick="nextSection('date')">Italian 🍝</button>
-<button onclick="nextSection('date')">Japanese 🍣</button>
-<button onclick="nextSection('date')">Korean 🍲</button>
-<button onclick="nextSection('date')">Chinese 🥡</button>
-<button onclick="nextSection('date')">Continental 🍽️</button>
-<button onclick="nextSection('date')">Cafe Date ☕</button>
-<button onclick="nextSection('date')">Dessert Date 🍰</button>
-</div>
-
-<!-- DATE -->
-<div id="date" class="section">
-<h2>Eye Surgery Bubu Recovery Date ✨💖</h2>
-<input type="date">
-<br><br>
-<button onclick="showFinal()">Perfect 💘</button>
-</div>
-
-<!-- FINAL -->
-<div id="final" class="section">
-<h1>IT'S A DATE!!! 🎉💘</h1>
-<p>I can't wait 🥰</p>
-<img id="finalPic" src="husky.jpg">
-</div>
-
-</div>
-
-<script>
-const noBtn=document.getElementById("noBtn");
-const yesBtn=document.getElementById("yesBtn");
-
-// NO button runs but never disappears
-function moveNo(){
-  const x=Math.random()*(window.innerWidth-noBtn.offsetWidth);
-  const y=Math.random()*(window.innerHeight-noBtn.offsetHeight);
-  noBtn.style.left=x+"px";
-  noBtn.style.top=y+"px";
-}
-
-document.addEventListener("mousemove",(e)=>{
-  const rect=noBtn.getBoundingClientRect();
-  const dist=Math.hypot(e.clientX-(rect.left+rect.width/2),
-                        e.clientY-(rect.top+rect.height/2));
-  if(dist<120) moveNo();
-});
-
-yesBtn.onclick=()=>{
-  document.getElementById("mainQ").style.display="none";
-  yesBtn.style.display="none";
-  document.getElementById("flowers").style.display="block";
-};
-
-function nextSection(id){
-  docum
+<button id
