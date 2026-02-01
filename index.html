@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  font-family:Segoe UI,sans-serif;
+  overflow:hidden;
+  text-align:center;
+}
+h1 {color:white;font-size:3em;}
+button {
+  padding:15px 35px;
+  font-size:1.2em;
+  border-radius:40px;
+  border:none;
+  cursor:pointer;
+  margin:10px;
+}
+#yesBtn {background:#ff2e63;color:white;}
+#noBtn {background:white;color:#ff2e63;position:absolute;}
+#loveMessage {color:white;font-size:2em;display:none;margin-top:30px;}
+</style>
+</head>
+<body>
+
+<div>
+  <h1>Will you be my Valentine, Vaibhu? 💖</h1>
+  <button id="yesBtn">Yes 😍</button>
+  <button id="noBtn">No 🙈</button>
+  <div id="loveMessage">YAYYY Vaibhu said YES!! 🥰💘</div>
+</div>
+
+<script>
+const noBtn=document.getElementById("noBtn");
+const yesBtn=document.getElementById("yesBtn");
+const loveMessage=document.getElementById("loveMessage");
+
+function moveNoButton(){
+  const x=Math.random()*(window.innerWidth-noBtn.offsetWidth);
+  const y=Math.random()*(window.innerHeight-noBtn.offsetHeight);
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+}
+
+document.addEventListener("mousemove",(e)=>{
+  const rect=noBtn.getBoundingClientRect();
+  const dist=Math.hypot(e.clientX-(rect.left+rect.width/2),
+                        e.clientY-(rect.top+rect.height/2));
+  if(dist<120) moveNoButton();
+});
+
+yesBtn.addEventListener("click",()=>loveMessage.style.display="block");
+</script>
+
+</body>
+</html>
